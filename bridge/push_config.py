@@ -40,6 +40,8 @@ def build() -> dict:
     cfg["assemblyai_api_key"] = key
     cfg["brain_url"] = env.get("SEBASTIAN_BRAIN_URL", "")
     cfg["brain_token"] = env.get("SEBASTIAN_TOKEN", "")
+    for server in cfg.get("mcp_servers", []):
+        server["token"] = env.get(server.pop("token_env", ""), "")
     return cfg
 
 
@@ -48,6 +50,7 @@ def masked(cfg: dict) -> dict:
     for k in ("assemblyai_api_key", "brain_token"):
         if out.get(k):
             out[k] = out[k][:4] + "…"
+    out["mcp_servers"] = [{**s, "token": "…" if s.get("token") else ""} for s in cfg.get("mcp_servers", [])]
     return out
 
 

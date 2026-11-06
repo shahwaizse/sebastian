@@ -82,6 +82,11 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 <td>Sends your Calendly link on WhatsApp</td>
 </tr>
 <tr>
+<td><img src="docs/assets/icons/link.svg" width="36" alt=""></td>
+<td><em>"Sebastian, log this in the CRM."</em></td>
+<td>Uses your apps' tools through <a href="docs/MCP.md">MCP</a></td>
+</tr>
+<tr>
 <td><img src="docs/assets/icons/hangup.svg" width="36" alt=""></td>
 <td><em>"Sebastian, cut the call."</em></td>
 <td>Hangs up for you</td>
@@ -129,3 +134,4 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 
 - [How it works under the hood](docs/HOW-IT-WORKS.md)
 - [Run it yourself](docs/SETUP.md)
+- [Connect MCP servers](docs/MCP.md)

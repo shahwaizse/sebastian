@@ -59,6 +59,7 @@ internal class SebastianSession(
     data class Line(val atMs: Long, val who: String, val text: String)
 
     private val running = AtomicBoolean(false)
+    private val mcp = SebastianMcp(cfg, CLIENT)
     @Volatile var state = "IDLE"; private set
     val startedAt = System.currentTimeMillis()
     private val lines = ArrayList<Line>()
@@ -159,6 +160,7 @@ internal class SebastianSession(
     fun start() {
         check(running.compareAndSet(false, true)) { "already running" }
         state = "CONNECTING"
+        Thread({ mcp.connect(log) }, "sebastian-mcp").apply { isDaemon = true }.start()
         startedNs = SystemClock.elapsedRealtimeNanos()
         if (tap != null && observer) {
             // WhatsApp keeps the real mic and plays the caller on the earpiece itself. Sebastian gets a copy of the
@@ -870,7 +872,7 @@ internal class SebastianSession(
                 val c = calls.getJSONObject(i)
                 val fn = c.getJSONObject("function")
                 val tTool = SystemClock.elapsedRealtime()
-                val result = runCatching { SebastianTools.run(cfg, fn.getString("name"), JSONObject(fn.optString("arguments", "{}")), otherName, otherNumber) }
+                val result = runCatching { SebastianTools.run(cfg, fn.getString("name"), JSONObject(fn.optString("arguments", "{}")), otherName, otherNumber, mcp) }
                     .getOrElse { JSONObject().put("error", "${it.javaClass.simpleName}: ${it.message}") }
                 log("tool ${fn.getString("name")} ${SystemClock.elapsedRealtime() - tTool} ms -> ${result.toString().take(160)}")
                 if (fn.getString("name") == "web_search" && !result.has("error")) searchAnswer = result.optString("answer").takeIf { it.isNotBlank() }
@@ -892,7 +894,7 @@ internal class SebastianSession(
             .put("model", cfg.optString("llm_model", "gemma-4-31b"))
             .put("messages", messages)
             .put("max_tokens", cfg.optInt("llm_max_tokens", 300))
-            .put("tools", SebastianTools.schema())
+            .put("tools", SebastianTools.schema(mcp))
             .put("tool_choice", "auto")
         cfg.optJSONObject("llm_extra")?.let { extra -> extra.keys().forEach { k -> body.put(k, extra.get(k)) } }
         val req = Request.Builder().url(cfg.optString("llm_url", "https://llm-gateway.assemblyai.com/v1/chat/completions"))

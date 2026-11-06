@@ -13,7 +13,12 @@ import org.json.JSONObject
 internal object SebastianTools {
     private val JSON = "application/json".toMediaType()
 
-    fun schema(): JSONArray = JSONArray()
+    /** The built-in tools plus [mcp]'s, whichever have been listed so far. */
+    fun schema(mcp: SebastianMcp? = null): JSONArray = builtIn().also { tools ->
+        mcp?.definitions()?.let { extra -> for (i in 0 until extra.length()) tools.put(extra.get(i)) }
+    }
+
+    private fun builtIn(): JSONArray = JSONArray()
         .put(fn("book_calendar_event", "Book a meeting on Rayyan's Google Calendar at an exact agreed day and time. " +
             "It adds a Google Meet link and WhatsApps it to the other person on the call (and to Rayyan).",
             JSONObject()
@@ -33,7 +38,8 @@ internal object SebastianTools {
             listOf("query")))
 
     /** [otherName]/[otherNumber]: who's on the call, so meeting links reach them (number known only when Sebastian dialed). */
-    fun run(cfg: JSONObject, name: String, args: JSONObject, otherName: String = "Them", otherNumber: String? = null): JSONObject {
+    fun run(cfg: JSONObject, name: String, args: JSONObject, otherName: String = "Them", otherNumber: String? = null, mcp: SebastianMcp? = null): JSONObject {
+        if (mcp?.handles(name) == true) return mcp.call(name, args)
         val path = when (name) {
             "book_calendar_event" -> "/event"
             "send_booking_link" -> "/send-link"
