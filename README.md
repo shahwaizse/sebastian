@@ -121,15 +121,6 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 
 <br>
 
-## Built on Call Stream
-
-<table>
-<tr>
-<td width="56" valign="top"><img src="docs/assets/icons/layers.svg" width="36" alt=""></td>
-<td>Sebastian gets into call audio using <strong>Call Stream</strong>, our earlier AI phone agent, so that project's code is still in this repo, including its Gemini agent and lead sheets. Sebastian doesn't use them. Sebastian hears, thinks and speaks on AssemblyAI; only web search uses Gemini, with Google Search grounding. What's new for this hackathon is mainly the <code>Sebastian*</code> code, <code>WakeService</code>, <code>WhatsAppTap</code> and <code>brain/</code>.</td>
-</tr>
-</table>
-
 ## More
 
 - [How it works under the hood](docs/HOW-IT-WORKS.md)
