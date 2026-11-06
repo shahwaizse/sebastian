@@ -34,24 +34,10 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 
 ## How it works
 
-<table>
-<tr>
-<td width="56" valign="top"><img src="docs/assets/icons/phone-call.svg" width="40" alt=""></td>
-<td><strong>Sebastian joins the call</strong><br>Start a call as usual, or say "Hey Sebastian, call Shahwaiz". Sebastian is on the line with you, with no second number or extra device, and the other person doesn't need to install anything.</td>
-</tr>
-<tr>
-<td valign="top"><img src="docs/assets/icons/ear.svg" width="40" alt=""></td>
-<td><strong>Sebastian listens</strong><br>Sebastian tells everyone it's there, then stays quiet and follows both sides of the conversation.</td>
-</tr>
-<tr>
-<td valign="top"><img src="docs/assets/icons/speaker.svg" width="40" alt=""></td>
-<td><strong>Say its name and Sebastian acts</strong><br>Sebastian answers out loud so both of you hear it, and does the work while the call is still going.</td>
-</tr>
-<tr>
-<td valign="top"><img src="docs/assets/icons/notes.svg" width="40" alt=""></td>
-<td><strong>Hang up and it's written down</strong><br>A summary with decisions and action items comes to your WhatsApp, and the full notes go to Notion.</td>
-</tr>
-</table>
+1. **Sebastian joins the call.** Start a call as usual, or say "Hey Sebastian, call Shahwaiz". Sebastian is on the line with you, with no second number or extra device, and the other person doesn't need to install anything.
+2. **Sebastian listens.** Sebastian tells everyone it's there, then stays quiet and follows both sides of the conversation.
+3. **Say its name and Sebastian acts.** Sebastian answers out loud so both of you hear it, and does the work while the call is still going.
+4. **Hang up and it's written down.** A summary with decisions and action items comes to your WhatsApp, and the full notes go to Notion.
 
 ## What Sebastian does on a call
 
