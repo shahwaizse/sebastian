@@ -32,14 +32,14 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 
 <br>
 
-## How it works
+## <img src="docs/assets/icons/workflow.svg" width="26" height="26" align="center" alt=""> How it works
 
 1. **Sebastian joins the call.** Start a call as usual, or say "Hey Sebastian, call Shahwaiz". Sebastian is on the line with you, with no second number or extra device, and the other person doesn't need to install anything.
 2. **Sebastian listens.** Sebastian tells everyone it's there, then stays quiet and follows both sides of the conversation.
 3. **Say its name and Sebastian acts.** Sebastian answers out loud so both of you hear it, and does the work while the call is still going.
 4. **Hang up and it's written down.** A summary with decisions and action items comes to your WhatsApp, and the full notes go to Notion.
 
-## What Sebastian does on a call
+## <img src="docs/assets/icons/zap.svg" width="26" height="26" align="center" alt=""> What Sebastian does on a call
 
 | Say | Sebastian |
 |---|---|
@@ -50,7 +50,7 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 | *"Sebastian, send them my booking link."* | Sends your Calendly link on WhatsApp |
 | *"Sebastian, cut the call."* | Hangs up for you |
 
-## Connect your own apps
+## <img src="docs/assets/icons/plug.svg" width="26" height="26" align="center" alt=""> Connect your own apps
 
 Sebastian works with remote MCP servers, so it can use your CRM, knowledge base or any other tool mid-call. List a server in `sebastian.json` and its tools are ready on the next call:
 
@@ -62,7 +62,7 @@ Sebastian works with remote MCP servers, so it can use your CRM, knowledge base 
 
 Then say *"Sebastian, log this in the CRM."* Servers need to use Streamable HTTP, with a bearer token or no auth. [More on MCP servers](docs/MCP.md)
 
-## Built on AssemblyAI
+## <img src="docs/assets/icons/audio-lines.svg" width="26" height="26" align="center" alt=""> Built on AssemblyAI
 
 | Service | What it does |
 |---|---|
@@ -75,7 +75,7 @@ Then say *"Sebastian, log this in the CRM."* Servers need to use Streamable HTTP
 <img src="docs/assets/flow.png" width="860" alt="Your phone sends both voices to AssemblyAI, and Sebastian reaches web search, Calendar, Notion, WhatsApp and your MCP servers">
 </div>
 
-## More
+## <img src="docs/assets/icons/book-open.svg" width="26" height="26" align="center" alt=""> More
 
 - [How it works under the hood](docs/HOW-IT-WORKS.md)
 - [Run it yourself](docs/SETUP.md)
