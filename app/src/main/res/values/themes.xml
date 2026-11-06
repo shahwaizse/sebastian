@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Launch and window colours; Compose draws the rest (Theme.kt). Night values are in values-night. -->
+    <style name="Theme.CallStream" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window</item>
+        <item name="android:windowSplashScreenBackground">@color/window</item>
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/window</item>
+    </style>
+</resources>

@@ -1,0 +1,49 @@
+# Gradle / Android build output
+.gradle/
+build/
+*/build/
+local.properties
+.idea/
+*.iml
+.kotlin/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Built APKs (large; keep locally in dist/)
+dist/
+*.apk
+*.aab
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets and signing (.env is never committed)
+.env*
+!.env.example
+*.jks
+*.keystore
+
+.DS_Store
+
+# Call audio downloaded for debugging (never commit)
+*.wav
+*.mp3
+
+# Test-call audio and transcripts pulled for debugging; never commit
+debug-calls/
+
+# Setup files carry personal settings
+*.callstream
+
+# Sebastian
+node_modules/
+contacts.json
+third_party/
+app/libs/*.aar
+recordings/
+
+# the pixel build's bundled settings contain a person's API key: never committed
+app/src/pixel/assets/
+calls/

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <application>
+        <!-- Declaring notification access gets an APK that arrives through WhatsApp or a browser blocked by Play Protect. -->
+        <service
+            android:name=".CallNotificationListener"
+            tools:node="remove" />
+    </application>
+</manifest>

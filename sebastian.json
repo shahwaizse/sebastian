@@ -1,0 +1,33 @@
+{
+  "owner_name": "Rayyan",
+  "voice_id": "aai-peter",
+  "stt_model": "universal-streaming-english",
+  "llm_model": "gemma-4-31b",
+  "llm_extra": {},
+  "llm_max_tokens": 300,
+  "timezone": "Asia/Karachi",
+  "join_line": "Hi, Sebastian here, taking notes for {owner}. Say my name if you need me.",
+  "on_it_line": "On it.",
+  "ack_lines": ["One sec.", "Sure, one moment.", "Got it, give me a second."],
+  "keyterms": [
+    "Rawaiz",
+    "Call Stream",
+    "AssemblyAI",
+    "Notion"
+  ],
+  "local_playback": true,
+  "self_source": "auto",
+  "uplink_route": "auto",
+  "barge_in": true,
+  "voice_gain": 1.6,
+  "barge_rms": 1800,
+  "barge_frames": 30,
+  "location": "Lahore, Pakistan",
+  "echo_duck": false,
+  "record_call": true,
+  "self_voice_comm": false,
+  "observer": true,
+  "mic_swap": true,
+  "swap_probe": false,
+  "stt_min_turn_silence": "250"
+}

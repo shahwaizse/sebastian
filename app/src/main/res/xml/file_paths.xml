@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Files shared through the share sheet: exported lead sheets (MainActivity.exportInterested) and support reports. -->
+<paths>
+    <cache-path name="exports" path="exports/" />
+    <cache-path name="reports" path="reports/" />
+    <cache-path name="updates" path="updates/" />
+</paths>

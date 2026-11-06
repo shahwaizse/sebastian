@@ -1,0 +1,22 @@
+# sebastian-brain: Sebastian's tools and post-call notes. The phone calls it mid-call (Calendar, Notion) and once
+# after each call (/call-end: summary into Notion, short WhatsApp to the owner). Secrets: see README "Setup".
+name = "sebastian-brain"
+main = "src/worker.js"
+compatibility_date = "2026-09-23"
+
+# WhatsApp messages go out through a linked-number sender, a Durable Object in a separate Worker on the same account.
+[[durable_objects.bindings]]
+name = "WA"
+class_name = "WhatsAppSender"
+script_name = "zara-brain"
+
+[observability]
+enabled = true
+
+# OWNER_WA and CALENDLY_URL are personal, so they are secrets: bridge/brain_secrets.py uploads them from .env.
+[vars]
+CALENDAR_ID = "primary"
+TIMEZONE = "Asia/Karachi"
+SUMMARY_MODEL = "gemma-4-31b"
+SEARCH_MODEL = "gemini-3.1-flash-lite"   # Gemini with Google Search grounding
+NOTION_VERSION = "2022-06-28"
