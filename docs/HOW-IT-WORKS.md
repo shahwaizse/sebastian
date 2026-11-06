@@ -25,10 +25,10 @@
 - **Joining WhatsApp calls:** Android gives apps no way into another app's call audio. Sebastian's helper runs as Android's `shell` user and registers audio-policy loopback mixes on WhatsApp. Sebastian then relays the call both ways, transcribing each side and mixing in its own voice. SIM calls use the carrier's call-audio interception APIs instead.
 - **Listening:** two Universal Streaming sessions (`universal-streaming-english`), one per side, so every line knows who said it. `keyterms_prompt` boosts "Sebastian" and the names on the call.
 - **Deciding to speak:** a finished line with its name triggers it. "Hey Sebastian." alone waits for the next sentence. For a few seconds after it answers, follow-ups without its name go to it too, and the model replies `SILENT` when people are talking to each other or only mention it in passing.
-- **Introducing itself:** it waits for the other side's first transcribed words before its join line, so a ring-back tone never fools it.
+- **Introducing itself:** Sebastian waits for the other side's first transcribed words before its join line, so a ring-back tone never fools it.
 - **Thinking:** AssemblyAI LLM Gateway, OpenAI-compatible chat completions with tool calling, with the whole call so far as context.
-- **Speaking:** AssemblyAI streaming TTS at `sample_rate=16000`, `pcm_s16le`, the same format as the call audio. While it speaks, both transcripts get silence so it doesn't hear itself. If someone talks over it, it sends `Cancel` and stops.
-- **Slow tools:** it acknowledges first, then speaks the result.
+- **Speaking:** AssemblyAI streaming TTS at `sample_rate=16000`, `pcm_s16le`, the same format as the call audio. While Sebastian speaks, both transcripts get silence so it doesn't hear itself. If someone talks over it, Sebastian sends `Cancel` and stops.
+- **Slow tools:** Sebastian acknowledges first, then speaks the result.
 
 ## AssemblyAI APIs
 

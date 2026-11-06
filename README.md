@@ -7,7 +7,7 @@
 <p><strong>An AI agent in your calls.</strong></p>
 
 <p>Sebastian joins your WhatsApp and phone calls from your own Android phone.<br>
-Say its name mid-call and it answers out loud, looks things up, and takes action.</p>
+Say its name mid-call and Sebastian answers out loud, looks things up, and takes action.</p>
 
 <p>
 <img src="https://img.shields.io/badge/AssemblyAI-Streaming%20STT-8B5CF6?style=flat-square" alt="AssemblyAI Streaming STT">
@@ -37,15 +37,15 @@ Say its name mid-call and it answers out loud, looks things up, and takes action
 <table>
 <tr>
 <td width="56" valign="top"><img src="docs/assets/icons/phone-call.svg" width="40" alt=""></td>
-<td><strong>It joins the call</strong><br>Start a call as usual, or say "Hey Sebastian, call Shahwaiz". Sebastian is on the line with you, with no second number or extra device, and the other person doesn't need to install anything.</td>
+<td><strong>Sebastian joins the call</strong><br>Start a call as usual, or say "Hey Sebastian, call Shahwaiz". Sebastian is on the line with you, with no second number or extra device, and the other person doesn't need to install anything.</td>
 </tr>
 <tr>
 <td valign="top"><img src="docs/assets/icons/ear.svg" width="40" alt=""></td>
-<td><strong>It listens</strong><br>It tells everyone it's there, then stays quiet and follows both sides of the conversation.</td>
+<td><strong>Sebastian listens</strong><br>Sebastian tells everyone it's there, then stays quiet and follows both sides of the conversation.</td>
 </tr>
 <tr>
 <td valign="top"><img src="docs/assets/icons/speaker.svg" width="40" alt=""></td>
-<td><strong>Say its name and it acts</strong><br>It answers out loud so both of you hear it, and does the work while the call is still going.</td>
+<td><strong>Say its name and Sebastian acts</strong><br>Sebastian answers out loud so both of you hear it, and does the work while the call is still going.</td>
 </tr>
 <tr>
 <td valign="top"><img src="docs/assets/icons/notes.svg" width="40" alt=""></td>
@@ -53,7 +53,7 @@ Say its name mid-call and it answers out loud, looks things up, and takes action
 </tr>
 </table>
 
-## What it does on a call
+## What Sebastian does on a call
 
 <table>
 <tr>
@@ -104,7 +104,7 @@ Say its name mid-call and it answers out loud, looks things up, and takes action
 <tr>
 <td><img src="docs/assets/icons/speaker.svg" width="36" alt=""></td>
 <td><strong>Text-to-Speech</strong></td>
-<td>Speaks its answers into the call</td>
+<td>Speaks Sebastian's answers into the call</td>
 </tr>
 </table>
 
@@ -121,7 +121,7 @@ Say its name mid-call and it answers out loud, looks things up, and takes action
 <table>
 <tr>
 <td width="56" valign="top"><img src="docs/assets/icons/layers.svg" width="36" alt=""></td>
-<td>Sebastian gets into call audio using <strong>Call Stream</strong>, our earlier AI phone agent, so that project's code is still in this repo, including its Gemini agent and lead sheets. Sebastian doesn't use them. It hears, thinks and speaks on AssemblyAI; only web search uses Gemini, with Google Search grounding. What's new for this hackathon is mainly the <code>Sebastian*</code> code, <code>WakeService</code>, <code>WhatsAppTap</code> and <code>brain/</code>.</td>
+<td>Sebastian gets into call audio using <strong>Call Stream</strong>, our earlier AI phone agent, so that project's code is still in this repo, including its Gemini agent and lead sheets. Sebastian doesn't use them. Sebastian hears, thinks and speaks on AssemblyAI; only web search uses Gemini, with Google Search grounding. What's new for this hackathon is mainly the <code>Sebastian*</code> code, <code>WakeService</code>, <code>WhatsAppTap</code> and <code>brain/</code>.</td>
 </tr>
 </table>
 
