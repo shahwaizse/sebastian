@@ -77,5 +77,3 @@ Then say *"Sebastian, log this in the CRM."* Servers need to use Streamable HTTP
 
 - [How it works under the hood](docs/HOW-IT-WORKS.md)
 - [Run it yourself](docs/SETUP.md)
-
-Contributor: [Rayyan](https://github.com/rayyanse)
