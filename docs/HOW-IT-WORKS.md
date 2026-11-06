@@ -28,6 +28,7 @@
 - **Introducing itself:** Sebastian waits for the other side's first transcribed words before its join line, so a ring-back tone never fools it.
 - **Thinking:** AssemblyAI LLM Gateway, OpenAI-compatible chat completions with tool calling, with the whole call so far as context.
 - **Speaking:** AssemblyAI streaming TTS at `sample_rate=16000`, `pcm_s16le`, the same format as the call audio. While Sebastian speaks, both transcripts get silence so it doesn't hear itself. If someone talks over it, Sebastian sends `Cancel` and stops.
+- **MCP tools:** at the start of a call, Sebastian lists the tools of each server in `mcp_servers` and offers them to the LLM alongside the built-in ones. See [MCP servers](MCP.md).
 - **Slow tools:** Sebastian acknowledges first, then speaks the result.
 
 ## AssemblyAI APIs

@@ -55,74 +55,41 @@ Say its name mid-call and Sebastian answers out loud, looks things up, and takes
 
 ## What Sebastian does on a call
 
-<table>
-<tr>
-<td width="56"><img src="docs/assets/icons/messages.svg" width="36" alt=""></td>
-<td><em>"Sebastian, what did we say the price was?"</em></td>
-<td>Answers from the conversation</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/search.svg" width="36" alt=""></td>
-<td><em>"Sebastian, who's right about this?"</em></td>
-<td>Searches the web and tells you both</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/file.svg" width="36" alt=""></td>
-<td><em>"Sebastian, what's in our pricing doc?"</em></td>
-<td>Reads the page from your Notion</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/calendar.svg" width="36" alt=""></td>
-<td><em>"Sebastian, book a follow-up Friday 3 PM."</em></td>
-<td>Books it and sends the Google Meet link on WhatsApp</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/link.svg" width="36" alt=""></td>
-<td><em>"Sebastian, send them my booking link."</em></td>
-<td>Sends your Calendly link on WhatsApp</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/link.svg" width="36" alt=""></td>
-<td><em>"Sebastian, log this in the CRM."</em></td>
-<td>Uses your apps' tools through <a href="docs/MCP.md">MCP</a></td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/hangup.svg" width="36" alt=""></td>
-<td><em>"Sebastian, cut the call."</em></td>
-<td>Hangs up for you</td>
-</tr>
-</table>
+| Say | Sebastian |
+|---|---|
+| *"Sebastian, what did we say the price was?"* | Answers from the conversation |
+| *"Sebastian, who's right about this?"* | Searches the web and tells you both |
+| *"Sebastian, what's in our pricing doc?"* | Reads the page from your Notion |
+| *"Sebastian, book a follow-up Friday 3 PM."* | Books it and sends the Google Meet link on WhatsApp |
+| *"Sebastian, send them my booking link."* | Sends your Calendly link on WhatsApp |
+| *"Sebastian, cut the call."* | Hangs up for you |
+
+## Connect your own apps
+
+Sebastian works with remote MCP servers, so it can use your CRM, knowledge base or any other tool mid-call. List a server in `sebastian.json` and its tools are ready on the next call:
+
+```json
+"mcp_servers": [
+  { "name": "crm", "url": "https://mcp.example.com/mcp", "token_env": "CRM_MCP_TOKEN" }
+]
+```
+
+Then say *"Sebastian, log this in the CRM."* Servers need to use Streamable HTTP, with a bearer token or no auth. [More on MCP servers](docs/MCP.md)
 
 ## Built on AssemblyAI
 
-<table>
-<tr>
-<td width="56"><img src="docs/assets/icons/ear.svg" width="36" alt=""></td>
-<td><strong>Universal Streaming</strong></td>
-<td>Transcribes each side of the call live, and hears "Hey Sebastian"</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/brain.svg" width="36" alt=""></td>
-<td><strong>LLM Gateway</strong></td>
-<td>Decides what to say and which tool to use, and writes the notes</td>
-</tr>
-<tr>
-<td><img src="docs/assets/icons/speaker.svg" width="36" alt=""></td>
-<td><strong>Text-to-Speech</strong></td>
-<td>Speaks Sebastian's answers into the call</td>
-</tr>
-</table>
-
-<br>
+| Service | What it does |
+|---|---|
+| **Universal Streaming** | Transcribes each side of the call live, and hears "Hey Sebastian" |
+| **LLM Gateway** | Decides what to say and which tool to use, and writes the notes |
+| **Text-to-Speech** | Speaks Sebastian's answers into the call |
 
 <div align="center">
-<img src="docs/assets/flow.png" width="860" alt="The phone sends both voices to AssemblyAI, which reaches Sebastian's brain for web search, Calendar, Notion and WhatsApp">
-</div>
-
 <br>
+<img src="docs/assets/flow.png" width="860" alt="Your phone sends both voices to AssemblyAI, and Sebastian reaches web search, Calendar, Notion, WhatsApp and your MCP servers">
+</div>
 
 ## More
 
 - [How it works under the hood](docs/HOW-IT-WORKS.md)
 - [Run it yourself](docs/SETUP.md)
-- [Connect MCP servers](docs/MCP.md)
