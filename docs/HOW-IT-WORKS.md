@@ -14,7 +14,7 @@
  │                    │                                 │          ▼
  │                    │                                 │     LLM Gateway (tools) ──► sebastian-brain
  │                    │                                 │          │                  (web search, Calendar, Notion)
- │                    └── his voice, mixed into both ◄──────── Streaming TTS (aai-peter, 16 kHz)
+ │                    └── its voice, mixed into both ◄──────── Streaming TTS (aai-peter, 16 kHz)
  └──────────────────────────────────────────────────────┘
         │ call ends: transcript
         ▼
@@ -22,13 +22,13 @@
 ```
 
 - **Hearing "Hey Sebastian":** a simple level gate on the phone opens an AssemblyAI stream only while someone is talking, so nothing is sent in silence. The app never holds the key: the helper gives it a short-lived token.
-- **Joining WhatsApp calls:** Android gives apps no way into another app's call audio. Sebastian's helper runs as Android's `shell` user and registers audio-policy loopback mixes on WhatsApp. Sebastian then relays the call both ways, transcribing each side and mixing in his own voice. SIM calls use the carrier's call-audio interception APIs instead.
+- **Joining WhatsApp calls:** Android gives apps no way into another app's call audio. Sebastian's helper runs as Android's `shell` user and registers audio-policy loopback mixes on WhatsApp. Sebastian then relays the call both ways, transcribing each side and mixing in its own voice. SIM calls use the carrier's call-audio interception APIs instead.
 - **Listening:** two Universal Streaming sessions (`universal-streaming-english`), one per side, so every line knows who said it. `keyterms_prompt` boosts "Sebastian" and the names on the call.
-- **Deciding to speak:** a finished line with his name triggers him. "Hey Sebastian." alone waits for the next sentence. For a few seconds after he answers, follow-ups without his name go to him too, and the model replies `SILENT` when people are talking to each other or only mention him in passing.
-- **Introducing himself:** he waits for the other side's first transcribed words before his join line, so a ring-back tone never fools him.
+- **Deciding to speak:** a finished line with its name triggers it. "Hey Sebastian." alone waits for the next sentence. For a few seconds after it answers, follow-ups without its name go to it too, and the model replies `SILENT` when people are talking to each other or only mention it in passing.
+- **Introducing itself:** it waits for the other side's first transcribed words before its join line, so a ring-back tone never fools him.
 - **Thinking:** AssemblyAI LLM Gateway, OpenAI-compatible chat completions with tool calling, with the whole call so far as context.
-- **Speaking:** AssemblyAI streaming TTS at `sample_rate=16000`, `pcm_s16le`, the same format as the call audio. While he speaks, both transcripts get silence so he doesn't hear himself. If someone talks over him, he sends `Cancel` and stops.
-- **Slow tools:** he acknowledges first, then speaks the result.
+- **Speaking:** AssemblyAI streaming TTS at `sample_rate=16000`, `pcm_s16le`, the same format as the call audio. While it speaks, both transcripts get silence so it doesn't hear itself. If someone talks over it, it sends `Cancel` and stops.
+- **Slow tools:** it acknowledges first, then speaks the result.
 
 ## AssemblyAI APIs
 
