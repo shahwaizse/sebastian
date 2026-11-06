@@ -49,3 +49,9 @@
 | `bridge/brain_secrets.py` | uploads the brain's secrets to Cloudflare |
 | `sebastian.json` | voice, models, join line, audio settings |
 | `docs/DEMO.md` | the two-minute demo script |
+
+## What's next
+
+- Three-way calls: Sebastian dials two people and merges them.
+- GitHub actions from a call ("Sebastian, open an issue for that bug").
+- Urdu, once AssemblyAI TTS supports it.
